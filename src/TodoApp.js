@@ -69,12 +69,11 @@ class TodoApp extends Component {
         return (
             <View style={styles.container}>
                 <Text>Todo Code Push</Text>
-                <Text>A doo doo doo, a daa daa daa, a ha ha!!!</Text>
+                <Text>Working!!!</Text>
                 <Button title='Send Event' onPress={() => this.sendEvent()}/>
                 <Button title='Native Crash' onPress={() => this.nativeCrash()}/>
                 <Button title='JS Crash' onPress={() => this.jsCrash()} />
                 <Button title='Code Push' onPress={() => this.codePushSync()} />
-                <Text>{JSON.stringify(this.state.logs)}</Text>
                 {this.state.logs.map((log, i) => <Text key={i}>{log}</Text>)}
 
             </View>
