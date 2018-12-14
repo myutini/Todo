@@ -69,7 +69,7 @@ class TodoApp extends Component {
         return (
             <View style={styles.container}>
                 <Text>Todo Code Push</Text>
-                <Text>Adde with Code Push</Text>
+                <Text>Silent Update</Text>
                 <Button title='Send Event' onPress={() => this.sendEvent()}/>
                 <Button title='Native Crash' onPress={() => this.nativeCrash()}/>
                 <Button title='JS Crash' onPress={() => this.jsCrash()} />
