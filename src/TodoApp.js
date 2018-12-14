@@ -8,7 +8,7 @@ import {
 
 import Analytics from 'appcenter-analytics';
 import Crashes from 'appcenter-crashes';
-import CodePush from 'react-native-code-push';
+import codePush from 'react-native-code-push';
 
 
 class TodoApp extends Component {
@@ -43,25 +43,27 @@ class TodoApp extends Component {
         };
     }
 
-    codePushSync(){
-        this.setState({logs: ['Sync has started.']});
-        CodePush.sync({
-            updateDialog: true,
-            installMode: CodePush.InstallMode.IMMEDIATE
-        }, (status) => {
-            for (var key in CodePush.SyncStatus) {
-                if(status === CodePush.SyncStatus[key]) {
-                    this.setState(prevState => ({logs: [...prevState.logs, key.replace(/_/g, ' ')]}));
-                    break;
-                }
-            }
-        });
-    } 
+    // codePushSync(){
+    //     this.setState({logs: ['Sync has started.']});
+    //     CodePush.sync({
+    //         updateDialog: true,
+    //         installMode: CodePush.InstallMode.IMMEDIATE
+    //     }, (status) => {
+    //         for (var key in CodePush.SyncStatus) {
+    //             if(status === CodePush.SyncStatus[key]) {
+    //                 this.setState(prevState => ({logs: [...prevState.logs, key.replace(/_/g, ' ')]}));
+    //                 break;
+    //             }
+    //         }
+    //     });
+    // } 
 
-    codePushSync(){
-        this.setState({logs: ['Sync has started.']});
-        CodePush.sync();
-    } 
+    // codePushSync(){
+    //     this.setState({logs: ['Sync has started.']});
+    //     CodePush.sync();
+    // } 
+
+    TodoApp = codePush(TodoApp);
 
     render() {
         return (
@@ -71,7 +73,7 @@ class TodoApp extends Component {
                 <Button title='Send Event' onPress={() => this.sendEvent()}/>
                 <Button title='Native Crash' onPress={() => this.nativeCrash()}/>
                 <Button title='JS Crash' onPress={() => this.jsCrash()} />
-                <Button title='Code Push' onPress={() => this.codePushSync()} />
+                {/* <Button title='Code Push' onPress={() => this.codePushSync()} /> */}
                 <Text>{JSON.stringify(this.state.logs)}</Text>
                 {this.state.logs.map((log, i) => <Text key={i}>{log}</Text>)}
 
