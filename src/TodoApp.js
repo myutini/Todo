@@ -8,7 +8,7 @@ import {
 
 import Analytics from 'appcenter-analytics';
 import Crashes from 'appcenter-crashes';
-import codePush from 'react-native-code-push';
+import CodePush from 'react-native-code-push';
 
 
 class TodoApp extends Component {
@@ -43,20 +43,20 @@ class TodoApp extends Component {
         };
     }
 
-    // codePushSync(){
-    //     this.setState({logs: ['Sync has started.']});
-    //     CodePush.sync({
-    //         updateDialog: true,
-    //         installMode: CodePush.InstallMode.IMMEDIATE
-    //     }, (status) => {
-    //         for (var key in CodePush.SyncStatus) {
-    //             if(status === CodePush.SyncStatus[key]) {
-    //                 this.setState(prevState => ({logs: [...prevState.logs, key.replace(/_/g, ' ')]}));
-    //                 break;
-    //             }
-    //         }
-    //     });
-    // } 
+    codePushSync(){
+        this.setState({logs: ['Sync has started.']});
+        CodePush.sync({
+            updateDialog: true,
+            installMode: CodePush.InstallMode.IMMEDIATE
+        }, (status) => {
+            for (var key in CodePush.SyncStatus) {
+                if(status === CodePush.SyncStatus[key]) {
+                    this.setState(prevState => ({logs: [...prevState.logs, key.replace(/_/g, ' ')]}));
+                    break;
+                }
+            }
+        });
+    } 
 
     // codePushSync(){
     //     this.setState({logs: ['Sync has started.']});
@@ -69,7 +69,7 @@ class TodoApp extends Component {
         return (
             <View style={styles.container}>
                 <Text>Todo Code Push</Text>
-                <Text>Silent Update</Text>
+                <Text>A doo doo doo, a daa daa daa, a ha ha!!!</Text>
                 <Button title='Send Event' onPress={() => this.sendEvent()}/>
                 <Button title='Native Crash' onPress={() => this.nativeCrash()}/>
                 <Button title='JS Crash' onPress={() => this.jsCrash()} />
@@ -82,7 +82,7 @@ class TodoApp extends Component {
     }
 }
 
-TodoApp = codePush(TodoApp);
+// TodoApp = codePush(TodoApp);
 
 export default TodoApp;
 
