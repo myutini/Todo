@@ -73,7 +73,7 @@ class TodoApp extends Component {
                 <Button title='Send Event' onPress={() => this.sendEvent()}/>
                 <Button title='Native Crash' onPress={() => this.nativeCrash()}/>
                 <Button title='JS Crash' onPress={() => this.jsCrash()} />
-                {/* <Button title='Code Push' onPress={() => this.codePushSync()} /> */}
+                <Button title='Code Push' onPress={() => this.codePushSync()} />
                 <Text>{JSON.stringify(this.state.logs)}</Text>
                 {this.state.logs.map((log, i) => <Text key={i}>{log}</Text>)}
 
