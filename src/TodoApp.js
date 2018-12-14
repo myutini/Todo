@@ -58,6 +58,11 @@ class TodoApp extends Component {
         });
     } 
 
+    codePushSync(){
+        this.setState({logs: ['Sync has started.']});
+        CodePush.sync();
+    } 
+
     render() {
         return (
             <View style={styles.container}>
