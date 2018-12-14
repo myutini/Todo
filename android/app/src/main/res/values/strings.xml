@@ -1,3 +1,6 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">E86Ng8fGCu4ZzwTkECUw1pW-TLXW588cd792-15c8-4807-a8b2-75aafce5db47</string>
     <string name="app_name">ToDo</string>
+    <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true">ALWAYS_SEND</string>
+    <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true">ALWAYS_SEND</string>
 </resources>
