@@ -63,7 +63,7 @@ class TodoApp extends Component {
     //     CodePush.sync();
     // } 
 
-    TodoApp = codePush(TodoApp);
+    
 
     render() {
         return (
@@ -81,6 +81,9 @@ class TodoApp extends Component {
         );
     }
 }
+
+TodoApp = codePush(TodoApp);
+
 export default TodoApp;
 
 const styles = StyleSheet.create({
