@@ -10,11 +10,12 @@ import Analytics from 'appcenter-analytics';
 import Crashes from 'appcenter-crashes';
 import CodePush from 'react-native-code-push';
 
+
 class TodoApp extends Component {
 
     sendEvent(){
-        Analytics.sendEvent('My Custom Event', {
-            timeProp: new Date().getSeconds()
+        Analytics.trackEvent('My Custom Event', {
+            TimeStamp: new Date().getTime()
         });
     }
 
@@ -26,10 +27,10 @@ class TodoApp extends Component {
         this.func1();
     }
 
-    func1(){ $this.func2() }
-    func2(){ $this.func3() }
-    func3(){ $this.func4() }
-    func4(){ $this.func5() }
+    func1(){ this.func2() }
+    func2(){ this.func3() }
+    func3(){ this.func4() }
+    func4(){ this.func5() }
 
     func5(){
         throw new Error('My uncaught Javascript exception.');
