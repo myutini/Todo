@@ -10,7 +10,7 @@ import Analytics from 'appcenter-analytics';
 import Crashes from 'appcenter-crashes';
 import CodePush from 'react-native-code-push';
 
-let codePushOptions = { checkFrequency: codePush.CheckFrequency.MANUAL };
+let codePushOptions = { checkFrequency: CodePush.CheckFrequency.MANUAL };
 
 class TodoApp extends Component {
 
