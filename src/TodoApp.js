@@ -10,6 +10,7 @@ import Analytics from 'appcenter-analytics';
 import Crashes from 'appcenter-crashes';
 import CodePush from 'react-native-code-push';
 
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.MANUAL };
 
 class TodoApp extends Component {
 
@@ -81,7 +82,7 @@ class TodoApp extends Component {
     }
 }
 
-// TodoApp = codePush(TodoApp);
+TodoApp = CodePush(codePushOptions)(TodoApp);
 
 export default TodoApp;
 
